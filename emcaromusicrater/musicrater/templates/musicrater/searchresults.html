@@ -1,0 +1,13 @@
+<h1>Results</h1>
+
+{% if results %}
+    {% for result in results %} 
+        {{  result.uid  }}
+        {{  result.song }}
+        {{  result.rating  }}
+    {% endfor %}
+{% else %} 
+    pass
+    
+    
+{% endif %}

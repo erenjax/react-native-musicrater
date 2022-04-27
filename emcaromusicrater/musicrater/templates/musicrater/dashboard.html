@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+
+<html>
+    {% block content %}
+    <div class="container py-5">
+    <h1>Register as a new user.</h1>
+    <form action="/user_url/" method ="post">
+
+        <!-- 
+            Ask for text input.
+        -->
+        <label for="username">Enter username:</label>
+
+        {% csrf_token %}
+
+        <input id="username" type="text" name="username" value="Enter your username">
+        <input id="password" type="text" value="Enter your password">
+        <!-- 
+            You can have the user submitting data without showing it, which can
+            be useful for a cookie value that you are passing in here, for 
+            example. 
+        -->
+       
+        <!-- 
+            Submit button 
+        -->
+        <input type="submit" value="Register">
+    </form>
+    </div>
+    {% endblock %}
+</html>
+
+

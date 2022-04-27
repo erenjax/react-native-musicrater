@@ -1,0 +1,19 @@
+<h2>Find songs by your favorite artist!</h2>
+<h1>Search Page</h1>
+
+<br/>
+<form method="POST" action="">
+    {% csrf_token %} 
+    {{ artist.as_p }}
+    <input type="submit" class="submit-button" name="retrieve_artist" value="get results"/>
+    
+
+</form>
+
+{% if songs == -1 %} 
+No songs by this artist
+{% else %} 
+{% for i in songs %} 
+{{ i.song }}
+{% endfor %} 
+{% endif %}

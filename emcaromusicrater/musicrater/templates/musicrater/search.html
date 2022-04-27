@@ -1,0 +1,21 @@
+<h2>Find past songs you've rated</h2>
+<h1>Search Page</h1>
+
+<br/>
+<form method="POST" action="">
+    {% csrf_token %} 
+    {{ rating.as_p }}
+    <input type="submit" class="submit-button" name="retrieve_rating" value="get results"/>
+    
+
+</form>
+
+{% if ratings == -1 %} 
+No user song ratings
+{% else %} 
+{% for i in ratings %} 
+{{ i.song }}
+{{ i.rating }} 
+{% endfor %} 
+{% endif %}
+

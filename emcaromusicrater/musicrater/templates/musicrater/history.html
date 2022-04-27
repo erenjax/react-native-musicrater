@@ -1,0 +1,15 @@
+<html>
+    <body>
+        {% if query %} 
+        {% for c in results %} 
+        <h3>{{c.song, c.rating %}}</h3>
+
+        {% empty %} 
+        <h3>You haven't rated any songs.</h3>
+
+        {% endfor %} 
+        {% endif %} 
+        
+
+    </body>
+</html>
